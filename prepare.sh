@@ -14,13 +14,15 @@ echo "Syncing required repositories ..."
 mkdir -p "data"
 
 PIDS=""
-./sync.sh https://github.com/mTresk/android_kernel_oneplus_msm8998.git "data/kernel" "${REF}" &
+./sync.sh https://github.com/weeb-acm/weebmsm8998-pie.git "data/kernel" "pie" &
 PIDS="${PIDS} $!"
-./sync.sh https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9 "data/gcc" &
+./sync.sh https://github.com/RaphielGang/aarch64-linux-gnu-8.x.git "data/gcc" &
+PIDS="${PIDS} $!"
+./sync.sh https://github.com/RaphielGang/arm-linux-gnueabi-8.x.git "data/gcc32" &
 PIDS="${PIDS} $!"
 ./sync.sh https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 "data/clang" &
 PIDS="${PIDS} $!"
-./sync.sh https://github.com/mTresk/AnyKernel2.git "data/anykernel2base" "redflare-op5" &
+./sync.sh https://github.com/weeb-acm/weebanykernel3.git "data/anykernel" "pie" &
 PIDS="${PIDS} $!"
 
 for p in $PIDS; do

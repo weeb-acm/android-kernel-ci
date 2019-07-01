@@ -2,8 +2,8 @@
 A generic auto-build repo for Android kernels using various Continuous Integration services
 
 ## Features
-* OnePlus 5T ARM64 preset
-* RedFlare kernel by Tresk
+* OnePlus 5T ARM64
+* Weeb kernel
 * Automatic versioning
 
 ## Usage

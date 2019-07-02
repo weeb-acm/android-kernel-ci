@@ -24,6 +24,7 @@ process_build () {
         mkdir -p "${ANYKERNEL_IMAGE_DIR}/modules/system/lib/modules"
         cp -f "${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb" "${ANYKERNEL_IMAGE_DIR}/Image.gz-dtb"
         cp -f "${KERNEL_DIR}/out/drivers/staging/qcacld-3.0/wlan.ko" "${ANYKERNEL_IMAGE_DIR}/modules/system/lib/modules"
+        ${CROSS_COMPILE}strip --strip-unneeded "${ANYKERNEL_IMAGE_DIR}/modules/system/lib/modules/wlan.ko"
         cd "${ANYKERNEL_DIR}"
         zip -r9 "${REPO_ROOT}/${FULLNAME}.zip" * -x README
         cd -

@@ -21,8 +21,9 @@ process_build () {
     BUILD_SUCCESS=$?
     
     if [ ${BUILD_SUCCESS} -eq 0 ]; then
-        mkdir -p "${ANYKERNEL_IMAGE_DIR}"
+        mkdir -p "${ANYKERNEL_IMAGE_DIR}/modules/system/lib/modules"
         cp -f "${KERNEL_DIR}/out/arch/arm64/boot/Image.gz-dtb" "${ANYKERNEL_IMAGE_DIR}/Image.gz-dtb"
+        cp -f "${KERNEL_DIR}/out/drivers/staging/qcacld-3.0/wlan.ko" "${ANYKERNEL_IMAGE_DIR}/modules/system/lib/modules"
         cd "${ANYKERNEL_DIR}"
         zip -r9 "${REPO_ROOT}/${FULLNAME}.zip" * -x README
         cd -

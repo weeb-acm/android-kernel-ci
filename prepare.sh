@@ -16,11 +16,9 @@ mkdir -p "data"
 PIDS=""
 ./sync.sh https://github.com/weeb-acm/weebmsm8998-pie.git "data/kernel" "pie" &
 PIDS="${PIDS} $!"
-./sync.sh https://github.com/RaphielGang/aarch64-linux-gnu-8.x.git "data/gcc" &
+./sync.sh https://github.com/kdrag0n/aarch64-elf-gcc "data/gcc" &
 PIDS="${PIDS} $!"
-./sync.sh https://github.com/RaphielGang/arm-linux-gnueabi-8.x.git "data/gcc32" &
-PIDS="${PIDS} $!"
-./sync.sh https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 "data/clang" &
+./sync.sh https://github.com/kdrag0n/arm-eabi-gcc "data/gcc32" &
 PIDS="${PIDS} $!"
 ./sync.sh https://github.com/weeb-acm/weebanykernel3.git "data/anykernel" "pie" &
 PIDS="${PIDS} $!"

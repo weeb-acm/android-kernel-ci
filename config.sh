@@ -3,9 +3,8 @@
 export REPO_ROOT=`pwd`
 
 # Paths
-export CLANG="${REPO_ROOT}/data/clang/clang-r353983d/bin/clang"
-export CROSS_COMPILE="${REPO_ROOT}/data/gcc/bin/aarch64-linux-gnu-"
-export CROSS_COMPILE_ARM32="${REPO_ROOT}/data/gcc32/bin/arm-linux-gnueabi-"
+export CROSS_COMPILE="${REPO_ROOT}/data/gcc/bin/aarch64-elf-"
+export CROSS_COMPILE_ARM32="${REPO_ROOT}/data/gcc32/bin/arm-eabi-"
 export ANYKERNEL_DIR="${REPO_ROOT}/data/anykernel"
 export ANYKERNEL_IMAGE_DIR="${ANYKERNEL_DIR}"
 export KERNEL_DIR="${REPO_ROOT}/data/kernel"
@@ -20,7 +19,7 @@ if [ ! -z ${AKCI_CCACHE} ]; then
 fi
 
 # If not defined gives long compiler name
-export COMPILER_NAME="CLANG-9.0.4"
+export COMPILER_NAME="GCC Custom"
 
 # Kernel config
 export DEFCONFIG="weebomni_defconfig"
